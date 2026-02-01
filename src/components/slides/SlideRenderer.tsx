@@ -15,6 +15,11 @@ import { MaintenanceSlide } from "./content/MaintenanceSlide";
 import { FeesSlide } from "./content/FeesSlide";
 import { SubgraphSlide } from "./content/SubgraphSlide";
 import { RoadmapSlide } from "./content/RoadmapSlide";
+import { EcosystemSlide } from "./content/EcosystemSlide";
+import { TeamSlide } from "./content/TeamSlide";
+import { AskSlide } from "./content/AskSlide";
+import { ForecastSlide } from "./content/ForecastSlide";
+import { CompetitorsSlide } from "./content/CompetitorsSlide";
 import { ClosingSlide } from "./content/ClosingSlide";
 
 interface SlideRendererProps {
@@ -54,6 +59,16 @@ export const SlideRenderer = ({ slide }: SlideRendererProps) => {
         return <SubgraphSlide data={slide.content.data} />;
       case "roadmap":
         return <RoadmapSlide data={slide.content.data} />;
+      case "ecosystem":
+        return <EcosystemSlide data={slide.content.data} />;
+      case "team":
+        return <TeamSlide data={slide.content.data} />;
+      case "ask":
+        return <AskSlide data={slide.content.data} />;
+      case "forecast":
+        return <ForecastSlide data={slide.content.data} />;
+      case "competitors":
+        return <CompetitorsSlide data={slide.content.data} />;
       case "closing":
         return <ClosingSlide data={slide.content.data} />;
       default:

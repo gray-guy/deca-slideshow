@@ -37,6 +37,10 @@
 
     --radius: 0.75rem;
 
+    /* Chart series (forecast slide) */
+    --chart-2: 142 76% 36%;
+    --chart-3: 38 92% 50%;
+
     /* Custom DECA colors */
     --deca-cyan: 170 100% 45%;
     --deca-cyan-glow: 170 100% 60%;

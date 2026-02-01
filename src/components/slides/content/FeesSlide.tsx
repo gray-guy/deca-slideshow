@@ -10,7 +10,8 @@ interface FeesSlideProps {
       name: string;
       fee: string;
     }>;
-    total: string;
+    introductory: string;
+    thereafter: string;
   };
 }
 
@@ -53,8 +54,8 @@ export const FeesSlide = ({ data }: FeesSlideProps) => {
 
         <div className="card-glass bg-primary/5 border-primary/30 text-center py-6">
           <p className="text-sm text-muted-foreground mb-2">Total Fee Percentage</p>
-          <span className="text-4xl font-display font-bold text-gradient">{data.total}</span>
-          <p className="text-xs text-muted-foreground mt-2">Equivalent to 20 basis points on each trade</p>
+          <span className="text-4xl font-display font-bold text-gradient">{data.introductory}</span>
+          <p className="text-4xl font-display font-bold text-gradient mt-2">{data.thereafter}</p>
         </div>
       </motion.div>
     </div>

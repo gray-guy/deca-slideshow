@@ -8,6 +8,7 @@ interface UsersSlideProps {
       desc: string;
     }>;
     contractAddress: string;
+    version?: string;
   };
 }
 
@@ -51,7 +52,7 @@ export const UsersSlide = ({ data }: UsersSlideProps) => {
               {data.contractAddress}
             </code>
           </div>
-          <span className="badge-primary">Version 1.0.4 | Ethereum Mainnet</span>
+          <span className="badge-primary">Version {data.version ?? "1.0.4"} | Ethereum Mainnet</span>
         </div>
       </motion.div>
     </div>

@@ -90,47 +90,6 @@ export const slides: Slide[] = [
     background: bg3
   },
   {
-    id: 5,
-    title: "Core Protocol Features",
-    badge: "FEATURES",
-    content: {
-      type: "features",
-      data: {
-        features: [
-          { title: "Streaming Trades", subtitle: "Optimized Execution", desc: "Execute trade volume in portions composed deterministically at the moment of execution." },
-          { title: "Hot Pairs", subtitle: "High-Value Opportunities", desc: "One-click shop with customizable interface to maximize trade performance. Savings: $100K - $1M+" },
-          { title: "Instasettle", subtitle: "OTC-Style Settlement", desc: "Trades can be immediately settled at the trade owner set price. Two modes: Standard and OnlyInstasettle." },
-          { title: "Autonomous Maintenance", subtitle: "Bot-Driven Settlement", desc: "Server-side bots probe trade execution periodically. Bot Incentive: 10 BPS per stream." }
-        ]
-      }
-    },
-    background: bgMain
-  },
-  {
-    id: 6,
-    title: "Streaming Trades",
-    badge: "STREAMING MECHANICS",
-    content: {
-      type: "streaming",
-      data: {
-        benefits: ["Minimized Slippage", "Large trades broken into smaller chunks reduce market impact"],
-        explanation: "Streaming trades are characterized by executing a trade volume in portions. These portions are composed deterministically at the moment of executing a trade.",
-        steps: [
-          { num: 1, title: "Trade Volume Analysis", desc: "Smart contract analyzes the total trade volume and available liquidity across DEXs" },
-          { num: 2, title: "Sweet Spot Calculation", desc: "Algorithm determines optimal stream size to keep slippage under 10BPS" },
-          { num: 3, title: "Sequential Execution", desc: "Each stream is executed one at a time, allowing market to rebalance" },
-          { num: 4, title: "Dynamic Recalculation", desc: "Stream count and size recalculated at each maintenance call" }
-        ],
-        characteristics: [
-          { label: "Deterministic Size", value: "Yes" },
-          { label: "Dynamic Adjustment", value: "Yes" },
-          { label: "Arbitrage Window", value: "Built-in" }
-        ]
-      }
-    },
-    background: bg1
-  },
-  {
     id: 7,
     title: "DEX Mechanics & Supported Platforms",
     badge: "DEX INTEGRATION",
@@ -152,60 +111,6 @@ export const slides: Slide[] = [
       }
     },
     background: bg2
-  },
-  {
-    id: 9,
-    title: "Hot Pairs",
-    badge: "HIGH-VALUE OPPORTUNITIES",
-    content: {
-      type: "hotpairs",
-      data: {
-        characteristics: [
-          { label: "Market Cap", desc: "High global market capitalization" },
-          { label: "DEX Liquidity", desc: "Poor liquidity on decentralized exchanges" },
-          { label: "CEX Focus", desc: "Liquidity concentrated on centralized exchanges" }
-        ],
-        explanation: "Hot Pairs represent token pairs which have high global market cap but low liquidity. This is very common where tokens have CEX-focused liquidity but poor DEX depth.",
-        savings: "$100,000s - $1,000,000s"
-      }
-    },
-    background: bgMain
-  },
-  {
-    id: 11,
-    title: "Instasettle",
-    badge: "OTC SETTLEMENT",
-    content: {
-      type: "instasettle",
-      data: {
-        benefits: ["Instant Execution", "No waiting for streams - settle immediately"],
-        explanation: "Instasettle trades can be immediately settled at the trade owner set price in an 'over the counter' style. It allows anyone in the world to settle the trade instantly at a determined BPS loss, plus network fees.",
-        modes: [
-          { name: "Standard", desc: "Trades streamed out one stream at a time. Instasettleable for remaining portion at any time." },
-          { name: "OnlyInstasettle", desc: "Trades not streamed at all. Fund portion provided by trade owner. Settled instantly at any time." }
-        ]
-      }
-    },
-    background: bg2
-  },
-  {
-    id: 12,
-    title: "Autonomous Maintenance & Bot System",
-    badge: "SYSTEM MAINTENANCE",
-    content: {
-      type: "maintenance",
-      data: {
-        explanation: "The 'bot' or 'maintainer' is a server-side TypeScript repo which runs on a cron timer, reading data from deployed contracts to return a comprehensive list of all system trades.",
-        features: ["Public Repository", "Anyone Can Run", "Open Source"],
-        botTasks: [
-          { title: "Analyze Outstanding Trades", desc: "Probes which trade pairs (by pairId) are outstanding" },
-          { title: "Execute Settlement", desc: "Calls executeTrades() on Core contract" },
-          { title: "Iterate Through Trades", desc: "Settles one stream at a time for each trade under pairId" }
-        ],
-        incentive: "Bots take 10 BPS on every stream they settle, debited back into their wallet immediately."
-      }
-    },
-    background: bg3
   },
   {
     id: 13,
@@ -397,6 +302,101 @@ export const slides: Slide[] = [
       }
     },
     background: bg2
+  },
+  {
+    id: 5,
+    title: "Core Protocol Features",
+    badge: "FEATURES",
+    content: {
+      type: "features",
+      data: {
+        features: [
+          { title: "🦈 Streaming Trades", subtitle: "Optimized Execution", desc: "Execute trade volume in portions composed deterministically at the moment of execution." },
+          { title: "🔥 Hot Pairs", subtitle: "High-Value Opportunities", desc: "One-click shop with customizable interface to maximize trade performance. Savings: $100K - $1M+" },
+          { title: "⚡ Instasettle", subtitle: "OTC-Style Settlement", desc: "Trades can be immediately settled at the trade owner set price. Two modes: Standard and OnlyInstasettle." },
+          { title: "🤖 Autonomous Maintenance", subtitle: "Bot-Driven Settlement", desc: "Server-side bots probe trade execution periodically. Bot Incentive: 10 BPS per stream." }
+        ]
+      }
+    },
+    background: bgMain
+  },
+  {
+    id: 6,
+    title: "🦈 Streaming Trades",
+    badge: "STREAMING MECHANICS",
+    content: {
+      type: "streaming",
+      data: {
+        benefits: ["Minimized Slippage", "Large trades broken into smaller chunks reduce market impact"],
+        explanation: "Streaming trades are characterized by executing a trade volume in portions. These portions are composed deterministically at the moment of executing a trade.",
+        steps: [
+          { num: 1, title: "Trade Volume Analysis", desc: "Smart contract analyzes the total trade volume and available liquidity across DEXs" },
+          { num: 2, title: "Sweet Spot Calculation", desc: "Algorithm determines optimal stream size to keep slippage under 10BPS" },
+          { num: 3, title: "Sequential Execution", desc: "Each stream is executed one at a time, allowing market to rebalance" },
+          { num: 4, title: "Dynamic Recalculation", desc: "Stream count and size recalculated at each maintenance call" }
+        ],
+        characteristics: [
+          { label: "Deterministic Size", value: "Yes" },
+          { label: "Dynamic Adjustment", value: "Yes" },
+          { label: "Arbitrage Window", value: "Built-in" }
+        ]
+      }
+    },
+    background: bg1
+  },
+  {
+    id: 9,
+    title: "🔥 Hot Pairs",
+    badge: "HIGH-VALUE OPPORTUNITIES",
+    content: {
+      type: "hotpairs",
+      data: {
+        characteristics: [
+          { label: "Market Cap", desc: "High global market capitalization" },
+          { label: "DEX Liquidity", desc: "Poor liquidity on decentralized exchanges" },
+          { label: "CEX Focus", desc: "Liquidity concentrated on centralized exchanges" }
+        ],
+        explanation: "Hot Pairs represent token pairs which have high global market cap but low liquidity. This is very common where tokens have CEX-focused liquidity but poor DEX depth.",
+        savings: "$100,000s - $1,000,000s"
+      }
+    },
+    background: bgMain
+  },
+  {
+    id: 11,
+    title: "⚡ Instasettle",
+    badge: "OTC SETTLEMENT",
+    content: {
+      type: "instasettle",
+      data: {
+        benefits: ["Instant Execution", "No waiting for streams - settle immediately"],
+        explanation: "Instasettle trades can be immediately settled at the trade owner set price in an 'over the counter' style. It allows anyone in the world to settle the trade instantly at a determined BPS loss, plus network fees.",
+        modes: [
+          { name: "Standard", desc: "Trades streamed out one stream at a time. Instasettleable for remaining portion at any time." },
+          { name: "OnlyInstasettle", desc: "Trades not streamed at all. Fund portion provided by trade owner. Settled instantly at any time." }
+        ]
+      }
+    },
+    background: bg2
+  },
+  {
+    id: 12,
+    title: "🤖 Autonomous Maintenance & Bot System",
+    badge: "SYSTEM MAINTENANCE",
+    content: {
+      type: "maintenance",
+      data: {
+        explanation: "The 'bot' or 'maintainer' is a server-side TypeScript repo which runs on a cron timer, reading data from deployed contracts to return a comprehensive list of all system trades.",
+        features: ["Public Repository", "Anyone Can Run", "Open Source"],
+        botTasks: [
+          { title: "Analyze Outstanding Trades", desc: "Probes which trade pairs (by pairId) are outstanding" },
+          { title: "Execute Settlement", desc: "Calls executeTrades() on Core contract" },
+          { title: "Iterate Through Trades", desc: "Settles one stream at a time for each trade under pairId" }
+        ],
+        incentive: "Bots take 10 BPS on every stream they settle, debited back into their wallet immediately."
+      }
+    },
+    background: bg3
   },
   {
     id: 18,

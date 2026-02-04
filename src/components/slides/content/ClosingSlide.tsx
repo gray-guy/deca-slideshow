@@ -5,6 +5,7 @@ interface ClosingSlideProps {
     metrics: Array<{
       value: string;
       label: string;
+      captionBold?: string;
     }>;
     badges: string[];
   };
@@ -44,7 +45,13 @@ export const ClosingSlide = ({ data }: ClosingSlideProps) => {
             <span className="text-4xl md:text-5xl font-display font-bold text-primary">
               {metric.value}
             </span>
-            <p className="text-sm text-muted-foreground mt-2">{metric.label}</p>
+            <p className="text-sm text-muted-foreground mt-2">
+              {metric.label && <>{metric.label}</>}
+              {metric.label && metric.captionBold && <br />}
+              {metric.captionBold && (
+                <span className="font-semibold text-foreground">{metric.captionBold}</span>
+              )}
+            </p>
           </motion.div>
         ))}
       </motion.div>

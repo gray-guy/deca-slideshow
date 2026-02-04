@@ -41,45 +41,14 @@ export const slides: Slide[] = [
       type: "closing",
       data: {
         metrics: [
-          { value: "<10", label: "BPS Slippage" },
-          { value: "~99%", label: "Price Accuracy" },
-          { value: "250+", label: "Tokens Supported" }
+          { value: "<10", label: "BPS Slippage", captionBold: "ON EVERY TRADE" },
+          { value: "1,500+ token pairs*", label: "supported", captionBold: "FROM TOP 250 MARKETCAP TOKENS" },
+          { value: "~99%", label: "Price Accuracy", captionBold: "REGARDLESS OF TRADE VOLUME" }
         ],
         badges: ["Ethereum Mainnet", "Smart Contract Verified", "Open Source"]
       }
     },
     background: bg3
-  },
-  {
-    id: 18,
-    title: "The Team",
-    badge: "WHO WE ARE",
-    content: {
-      type: "team",
-      data: {
-        members: [
-          {
-            name: "Max Kent",
-            title: "Product Owner & Blockchain Architect",
-            description: "Engineer and team lead, with experience across the breadth of the blockchain industry and specialises in technical DeFi implementations and mathematics.\n\nHas worked at companies including THORChain, Panther Protocol, OpenZeppelin and Nethermind.",
-            imageUrl: "/team/max-kent.png"
-          },
-          {
-            name: "Shehroz Saleem",
-            title: "Systems & Design Engineer",
-            description: "Specializing in UI/UX for complex protocols. Hands-on shipping products like DecaStream, Nemesis, Galaxy, with a strong bias toward turning protocol logic into clean, intuitive user interfaces.",
-            imageUrl: "/team/shehroz-saleem.png"
-          },
-          {
-            name: "Ivan Golemdzhiyski",
-            title: "Full Stack Engineer",
-            description: "Full-stack engineer with an accelerated career to Tech Lead at 22, leading a team at British Gas. Deeply hands-on across frontend and backend development, system architecture, and delivery of large-scale, customer-facing platforms.\n\nIntroduced to blockchain working as a consultant under THORChain. Worked across multi-disciplinary teams implementing the DECA suite.",
-            imageUrl: "/team/ivan-golemdzhiyski.png"
-          }
-        ]
-      }
-    },
-    background: bgMain
   },
   {
     id: 2,
@@ -107,10 +76,13 @@ export const slides: Slide[] = [
     content: {
       type: "protocol",
       data: {
-        description: "DECAStream is a decentralized hybrid routing protocol designed to reduce slippage to under 10BPS for the top 250 tokens against core stable tokens.",
+        description: "*DECAStream* is a decentralized *hybrid routing protocol* designed to reduce slippage to *under 10BPS*. We have vetted and *tailored our UI* to work seamlessly with the *top 250 tokens* against core stable tokens.",
         coreTokens: ["WBTC", "WETH", "DAI", "USDC", "USDT"],
-        problem: "When trading illiquid tokens that have high market capitalization but low liquidity across popular DEXs, executing large trade volumes incurs considerable slippage loss.",
-        solution: ["Stream trades out chunk by chunk to minimize market impact", "Achieve as close to 99% price accuracy compared to global market price"],
+        problem: "When trading *illiquid tokens* that have *high market capitalization* but *low liquidity* across popular DEXs, large trade volumes incur *prohibitively considerable slippage losses*.\n\nThese large volumes also open vectors for *MEV attacks* and *no intuitive UI exists* for tactically performing trades *across ecosystem DEXs*",
+        solution: [
+          "Trades are *algorithmically executed* chunk by chunk, or *streamed*, to keep slippage at *<10BPS*",
+          "Deterministically achieve up to *99% price accuracy* compared to global market price saving *10s of $1000s* for *high mkp/low liquidity tokens*"
+        ],
         metrics: [
           { label: "Slippage Target", value: "<10 BPS" },
           { label: "Price Accuracy", value: "~99%" },
@@ -446,5 +418,36 @@ export const slides: Slide[] = [
       }
     },
     background: bg2
+  },
+  {
+    id: 18,
+    title: "The Team",
+    badge: "WHO WE ARE",
+    content: {
+      type: "team",
+      data: {
+        members: [
+          {
+            name: "Max Kent",
+            title: "Product Owner & Blockchain Architect",
+            description: "Engineer and team lead, with experience across the breadth of the blockchain industry and specialises in technical DeFi implementations and mathematics.\n\nHas worked at companies including THORChain, Panther Protocol, OpenZeppelin and Nethermind.",
+            imageUrl: "/team/max-kent.png"
+          },
+          {
+            name: "Shehroz Saleem",
+            title: "Systems & Design Engineer",
+            description: "Specializing in UI/UX for complex protocols. Hands-on shipping products like DecaStream, Nemesis, Galaxy, with a strong bias toward turning protocol logic into clean, intuitive user interfaces.",
+            imageUrl: "/team/shehroz-saleem.png"
+          },
+          {
+            name: "Ivan Golemdzhiyski",
+            title: "Full Stack Engineer",
+            description: "Full-stack engineer with an accelerated career to Tech Lead at 22, leading a team at British Gas. Deeply hands-on across frontend and backend development, system architecture, and delivery of large-scale, customer-facing platforms.\n\nIntroduced to blockchain working as a consultant under THORChain. Worked across multi-disciplinary teams implementing the DECA suite.",
+            imageUrl: "/team/ivan-golemdzhiyski.png"
+          }
+        ]
+      }
+    },
+    background: bgMain
   }
 ];

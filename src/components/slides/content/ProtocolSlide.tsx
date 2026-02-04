@@ -21,7 +21,17 @@ export const ProtocolSlide = ({ data }: ProtocolSlideProps) => {
           transition={{ duration: 0.5 }}
           className="card-glass"
         >
-          <p className="text-muted-foreground">{data.description}</p>
+          <p className="text-muted-foreground">
+            {data.description.split(/\*(.+?)\*/g).map((part, i) =>
+              i % 2 === 1 ? (
+                <strong key={i} className="font-semibold text-foreground">
+                  {part}
+                </strong>
+              ) : (
+                part
+              )
+            )}
+          </p>
         </motion.div>
 
         <motion.div
@@ -40,19 +50,30 @@ export const ProtocolSlide = ({ data }: ProtocolSlideProps) => {
           </div>
         </motion.div>
 
+      </div>
+
+      {/* Right Column */}
+      <div className="space-y-6">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="card-glass border-destructive/30"
         >
           <h3 className="text-sm font-semibold text-destructive mb-2">The Problem We Solve</h3>
-          <p className="text-sm text-muted-foreground">{data.problem}</p>
+          <p className="text-sm text-muted-foreground whitespace-pre-line">
+            {data.problem.split(/\*(.+?)\*/g).map((part, i) =>
+              i % 2 === 1 ? (
+                <strong key={i} className="font-semibold text-foreground">
+                  {part}
+                </strong>
+              ) : (
+                part
+              )
+            )}
+          </p>
         </motion.div>
-      </div>
 
-      {/* Right Column */}
-      <div className="space-y-6">
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -63,25 +84,21 @@ export const ProtocolSlide = ({ data }: ProtocolSlideProps) => {
           <ul className="space-y-2">
             {data.solution.map((item, index) => (
               <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                <span className="text-primary mt-1">→</span>
-                {item}
+                <span className="text-primary mt-1 shrink-0">→</span>
+                <span>
+                  {item.split(/\*(.+?)\*/g).map((part, i) =>
+                    i % 2 === 1 ? (
+                      <strong key={i} className="font-semibold text-foreground">
+                        {part}
+                      </strong>
+                    ) : (
+                      part
+                    )
+                  )}
+                </span>
               </li>
             ))}
           </ul>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="grid grid-cols-3 gap-4"
-        >
-          {data.metrics.map((metric, index) => (
-            <div key={index} className="metric-card">
-              <span className="text-2xl font-display font-bold text-primary">{metric.value}</span>
-              <span className="text-xs text-muted-foreground text-center">{metric.label}</span>
-            </div>
-          ))}
         </motion.div>
       </div>
     </div>

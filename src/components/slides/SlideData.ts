@@ -62,7 +62,8 @@ export const slides: Slide[] = [
         problem: "When trading *illiquid tokens* that have *high market capitalization* but *low liquidity* across popular DEXs, large trade volumes incur *prohibitively considerable slippage losses*.\n\nThese large volumes also open vectors for *MEV attacks* and *no intuitive UI exists* for tactically performing trades *across ecosystem DEXs*",
         solution: [
           "Trades are *algorithmically executed* chunk by chunk, or *streamed*, to keep slippage at *<10BPS*",
-          "Deterministically achieve up to *99% price accuracy* compared to global market price saving *10s of $1000s* for *high mkp/low liquidity tokens*"
+          "Deterministically achieve up to *99% price accuracy* compared to global market price saving *10s of $1000s* for *high mkp/low liquidity tokens*",
+          "*Hunt Liquidity* from the *top DEXs* for *token variety*, *market cap* and *depth* with our *intelligent auto-routing smart contracts*"
         ],
         metrics: [
           { label: "Slippage Target", value: "<10 BPS" },

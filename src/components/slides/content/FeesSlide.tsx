@@ -9,6 +9,7 @@ interface FeesSlideProps {
     recipients: Array<{
       name: string;
       fee: string;
+      note?: string;
     }>;
     introductory: string;
     thereafter: string;
@@ -47,15 +48,24 @@ export const FeesSlide = ({ data }: FeesSlideProps) => {
           {data.recipients.map((recipient) => (
             <div key={recipient.name} className="card-glass text-center">
               <span className="text-3xl font-display font-bold text-primary">{recipient.fee}</span>
-              <p className="text-sm text-muted-foreground mt-1">{recipient.name}</p>
+              <p className="text-sm font-semibold text-foreground mt-2">{recipient.name}</p>
+              {recipient.note && (
+                <p className="text-xs text-muted-foreground mt-1">{recipient.note}</p>
+              )}
             </div>
           ))}
         </div>
 
         <div className="card-glass bg-primary/5 border-primary/30 text-center py-6">
           <p className="text-sm text-muted-foreground mb-2">Total Fee Percentage</p>
-          <span className="text-4xl font-display font-bold text-gradient">{data.introductory}</span>
-          <p className="text-4xl font-display font-bold text-gradient mt-2">{data.thereafter}</p>
+          <div>
+            <span className="text-4xl font-display font-bold text-gradient">{data.introductory}</span>
+            <p className="text-sm text-muted-foreground mt-1">Introductory</p>
+          </div>
+          <div className="mt-4">
+            <span className="text-4xl font-display font-bold text-gradient">{data.thereafter}</span>
+            <p className="text-sm text-muted-foreground mt-1">Regular</p>
+          </div>
         </div>
       </motion.div>
     </div>

@@ -33,24 +33,6 @@ export const slides: Slide[] = [
     background: bgMain
   },
   {
-    id: 16,
-    title: "Precision Trading. Optimized Execution.",
-    subtitle: "Decentralized.",
-    badge: "DECAStream",
-    content: {
-      type: "closing",
-      data: {
-        metrics: [
-          { value: "<10", label: "BPS Slippage", captionBold: "ON EVERY TRADE" },
-          { value: "1,500+ token pairs*", label: "supported", captionBold: "FROM TOP 250 MARKETCAP TOKENS" },
-          { value: "~99%", label: "Price Accuracy", captionBold: "REGARDLESS OF TRADE VOLUME" }
-        ],
-        badges: ["Ethereum Mainnet", "Smart Contract Verified", "Open Source"]
-      }
-    },
-    background: bg3
-  },
-  {
     id: 3,
     title: "What is DECAStream?",
     badge: "PROTOCOL OVERVIEW",
@@ -125,11 +107,11 @@ export const slides: Slide[] = [
           { type: "Instasettle Trades", timing: "Fees deducted when trade is Instasettled, from amountOut received" }
         ],
         recipients: [
-          { name: "Protocol", fee: "10 BPS" },
-          { name: "Maintainer/Bot", fee: "10 BPS" }
+          { name: "Protocol", fee: "10 / 20 BPS", note: "introductory/regular" },
+          { name: "Maintainer/Bot", fee: "10 / 20 BPS", note: "introductory/regular" }
         ],
-        introductory: "0.2% (20 basis points) Introductory Offer",
-        thereafter: "0.4% (40 basis points) thereafter"
+        introductory: "0.2% (20 basis points)",
+        thereafter: "0.4% (40 basis points)"
       }
     },
     background: bgMain
@@ -278,18 +260,18 @@ export const slides: Slide[] = [
         leftAxisLabel: "Budget spend ($k)",
         rightAxisLabel: "Profit ($k cumulative)",
         dataPoints: [
-          { month: "M1", budgetSpend: 64.3, profit: 0, profit025: 0 },
-          { month: "M2", budgetSpend: 128.6, profit: 0, profit025: 0 },
-          { month: "M3", budgetSpend: 192.9, profit: 0, profit025: 0 },
-          { month: "M4", budgetSpend: 257.1, profit: 0, profit025: 0 },
-          { month: "M5", budgetSpend: 321.4, profit: 0, profit025: 0 },
-          { month: "M6", budgetSpend: 385.7, profit: 0, profit025: 0 },
-          { month: "M7", budgetSpend: 450, profit: 100, profit025: 250 },
-          { month: "M8", budgetSpend: 450, profit: 200, profit025: 500 },
-          { month: "M9", budgetSpend: 450, profit: 300, profit025: 750 },
-          { month: "M10", budgetSpend: 450, profit: 500, profit025: 1250 },
-          { month: "M11", budgetSpend: 450, profit: 700, profit025: 1750 },
-          { month: "M12", budgetSpend: 450, profit: 900, profit025: 2250 }
+          { month: "M1", budgetSpend: 50, profit: 0, profit025: 0 },
+          { month: "M2", budgetSpend: 100, profit: 0, profit025: 0 },
+          { month: "M3", budgetSpend: 150, profit: 0, profit025: 0 },
+          { month: "M4", budgetSpend: 200, profit: 0, profit025: 0 },
+          { month: "M5", budgetSpend: 250, profit: 0, profit025: 0 },
+          { month: "M6", budgetSpend: 300, profit: 0, profit025: 0 },
+          { month: "M7", budgetSpend: 350, profit: 100, profit025: 250 },
+          { month: "M8", budgetSpend: 350, profit: 200, profit025: 500 },
+          { month: "M9", budgetSpend: 350, profit: 300, profit025: 750 },
+          { month: "M10", budgetSpend: 350, profit: 500, profit025: 1250 },
+          { month: "M11", budgetSpend: 350, profit: 700, profit025: 1750 },
+          { month: "M12", budgetSpend: 350, profit: 900, profit025: 2250 }
         ],
         yAxisMax: 2500,
         bullets: [
@@ -395,6 +377,24 @@ export const slides: Slide[] = [
           { title: "Iterate Through Trades", desc: "Settles one stream at a time for each trade under pairId" }
         ],
         incentive: "Bots take 10 BPS on every stream they settle, debited back into their wallet immediately."
+      }
+    },
+    background: bg3
+  },
+  {
+    id: 16,
+    title: "Precision Trading. Optimized Execution.",
+    subtitle: "Decentralized.",
+    badge: "DECAStream",
+    content: {
+      type: "closing",
+      data: {
+        metrics: [
+          { value: "<10", label: "BPS Slippage", captionBold: "ON EVERY TRADE" },
+          { value: "1,500+ token pairs*", label: "supported", captionBold: "FROM TOP 250 MARKETCAP TOKENS" },
+          { value: "~99%", label: "Price Accuracy", captionBold: "REGARDLESS OF TRADE VOLUME" }
+        ],
+        badges: ["Ethereum Mainnet", "Smart Contract Verified", "Open Source"]
       }
     },
     background: bg3

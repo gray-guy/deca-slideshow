@@ -258,10 +258,10 @@ export const slides: Slide[] = [
         lineItems: [
           { category: "Team", amount: "$120k", description: "Team allocation" },
           { category: "Maintenance", amount: "$30k", description: "Infrastructure & operations" },
-          { category: "Audit", amount: "$200k", description: "Security audit" },
+          { category: "Audit", amount: "$100k", description: "Security audit" },
           { category: "Marketing & Business Development", amount: "$100k", description: "Growth & partnerships" }
         ],
-        total: "$450k"
+        total: "$350k"
       }
     },
     background: bg1

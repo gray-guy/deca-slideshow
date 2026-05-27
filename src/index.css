@@ -107,7 +107,8 @@
 
 @layer components {
   .slide-container {
-    @apply relative w-full h-screen overflow-hidden;
+    /* The slideshow stage controls sizing (scales a fixed 16:9 canvas). */
+    @apply relative w-full h-full overflow-hidden;
     background: hsl(var(--background));
   }
 

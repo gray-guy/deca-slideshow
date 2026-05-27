@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { slides } from "./SlideData";
 import { SlideRenderer } from "./SlideRenderer";
@@ -7,6 +7,23 @@ import { SlideNavigation } from "./SlideNavigation";
 export const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [viewport, setViewport] = useState({ width: window.innerWidth, height: window.innerHeight });
+
+  // Fixed 16:9 canvas that we scale to fit viewport.
+  const STAGE_WIDTH = 1440;
+  const STAGE_HEIGHT = 810;
+
+  useEffect(() => {
+    const onResize = () => setViewport({ width: window.innerWidth, height: window.innerHeight });
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const stageScale = useMemo(() => {
+    const scale = Math.min(viewport.width / STAGE_WIDTH, viewport.height / STAGE_HEIGHT);
+    // Guard against crazy-small viewports (e.g. browser UI changes mid-resize).
+    return Number.isFinite(scale) && scale > 0 ? scale : 1;
+  }, [viewport.height, viewport.width]);
 
   const goToSlide = useCallback((index: number) => {
     setDirection(index > currentSlide ? 1 : -1);
@@ -74,7 +91,18 @@ export const Slideshow = () => {
           }}
           className="absolute inset-0"
         >
-          <SlideRenderer slide={slides[currentSlide]} />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div
+              style={{
+                width: STAGE_WIDTH,
+                height: STAGE_HEIGHT,
+                transform: `scale(${stageScale})`,
+                transformOrigin: "center",
+              }}
+            >
+              <SlideRenderer slide={slides[currentSlide]} />
+            </div>
+          </div>
         </motion.div>
       </AnimatePresence>
 

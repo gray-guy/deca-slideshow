@@ -44,12 +44,12 @@ export const slides: Slide[] = [
         problem: "When trading *illiquid tokens* that have *high market capitalization* but *low liquidity* across popular DEXs, large trade volumes incur *prohibitively considerable slippage losses*.\n\nThese large volumes also open vectors for *MEV attacks* and *no intuitive UI exists* for tactically performing trades *across ecosystem DEXs*",
         solution: [
           "Trades are *algorithmically executed* chunk by chunk, or *streamed*, to keep slippage at *<10BPS*",
-          "Deterministically achieve up to *99% price accuracy* compared to global market price saving *10s of $1000s* for *high mkp/low liquidity tokens*",
+          "*Optimized for* *99% price accuracy* compared to global market price saving *10s of $1000s* for *high mkp/low liquidity tokens*",
           "*Hunt Liquidity* from the *top DEXs* for *token variety*, *market cap* and *depth* with our *intelligent auto-routing smart contracts*"
         ],
         metrics: [
           { label: "Slippage Target", value: "<10 BPS" },
-          { label: "Price Accuracy", value: "~99%" },
+          { label: "Price Accuracy", value: "99%" },
           { label: "Supported Tokens", value: "Top 250" }
         ]
       }
@@ -392,7 +392,7 @@ export const slides: Slide[] = [
         metrics: [
           { value: "<10", label: "BPS Slippage", captionBold: "ON EVERY TRADE" },
           { value: "1,500+ token pairs*", label: "supported", captionBold: "FROM TOP 250 MARKETCAP TOKENS" },
-          { value: "~99%", label: "Price Accuracy", captionBold: "REGARDLESS OF TRADE VOLUME" }
+          { value: "99%", label: "price accuracy", captionBold: "OPTIMIZED TO ACHIEVE" }
         ],
         badges: ["Ethereum Mainnet", "Smart Contract Verified", "Open Source"]
       }

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { slides } from "./SlideData";
 import { SlideRenderer } from "./SlideRenderer";
 import { SlideNavigation } from "./SlideNavigation";
@@ -8,6 +9,7 @@ export const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [viewport, setViewport] = useState({ width: window.innerWidth, height: window.innerHeight });
+  const isMobile = useIsMobile();
 
   // Fixed 16:9 canvas that we scale to fit viewport.
   const STAGE_WIDTH = 1440;
@@ -20,10 +22,13 @@ export const Slideshow = () => {
   }, []);
 
   const stageScale = useMemo(() => {
-    const scale = Math.min(viewport.width / STAGE_WIDTH, viewport.height / STAGE_HEIGHT);
+    // On mobile, scale to width and allow vertical scrolling rather than squeezing to fit height.
+    const scale = isMobile
+      ? viewport.width / STAGE_WIDTH
+      : Math.min(viewport.width / STAGE_WIDTH, viewport.height / STAGE_HEIGHT);
     // Guard against crazy-small viewports (e.g. browser UI changes mid-resize).
     return Number.isFinite(scale) && scale > 0 ? scale : 1;
-  }, [viewport.height, viewport.width]);
+  }, [isMobile, viewport.height, viewport.width]);
 
   const goToSlide = useCallback((index: number) => {
     setDirection(index > currentSlide ? 1 : -1);
@@ -76,7 +81,7 @@ export const Slideshow = () => {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-background">
+    <div className="relative w-full h-screen overflow-x-hidden overflow-y-auto bg-background">
       <AnimatePresence initial={false} custom={direction} mode="wait">
         <motion.div
           key={currentSlide}
@@ -91,13 +96,13 @@ export const Slideshow = () => {
           }}
           className="absolute inset-0"
         >
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-start justify-center py-6 md:py-0 md:items-center">
             <div
               style={{
                 width: STAGE_WIDTH,
-                height: STAGE_HEIGHT,
+                height: isMobile ? "auto" : STAGE_HEIGHT,
                 transform: `scale(${stageScale})`,
-                transformOrigin: "center",
+                transformOrigin: isMobile ? "top center" : "center",
               }}
             >
               <SlideRenderer slide={slides[currentSlide]} />

@@ -17,6 +17,57 @@ export interface SlideContent {
   data?: any;
 }
 
+/** Not shown in the live deck; re-add to `slides` when needed. */
+export const deprecatedSlides: Slide[] = [
+  {
+    id: 15,
+    title: "Roadmap & Financials",
+    subtitle: "Q1–Q3 2026 timeline, Ecosystem status, Team, The Ask, and 12‑month financial forecast",
+    badge: "ROADMAP & FINANCIALS",
+    content: {
+      type: "roadmap",
+      data: {
+        current: [
+          { title: "Configure Curve DEX", desc: "Limited implementation exists; full Curve integration in focus." },
+          { title: "Configure Fluid DEX", desc: "Fluid DEX integration as current focus for next version." },
+          { title: "Metrics Dashboard", desc: "Front end task to plug into middleware/smart contract feeds for comprehensive analytics." },
+          { title: "Implement Deterministic Trades", desc: "Deterministic trade execution and stream composition." },
+          { title: "Audit and code review", desc: "Security audit and full code review." }
+        ],
+        timeline: [
+          {
+            quarter: "Q1 2026",
+            version: "v1.0.6",
+            items: [
+              { title: "Configure Curve DEX", desc: "Full Curve DEX integration and configuration." },
+              { title: "Configure Fluid DEX", desc: "Fluid DEX integration and configuration." },
+              { title: "Metrics Dashboard", desc: "Front end task to plug into middleware/smart contract feeds for comprehensive analytics." }
+            ]
+          },
+          {
+            quarter: "Q2 2026",
+            version: "v1.0.7",
+            items: [
+              { title: "Implement Deterministic Trades", desc: "Deterministic trade execution and stream composition." },
+              { title: "Audit and code review", desc: "Security audit and full code review." }
+            ]
+          },
+          {
+            quarter: "Q3 2026",
+            version: "v1.0.8 → v2.0.0",
+            items: [
+              { title: "Intrachain Deployments", desc: "Deployments on Base and Avalanche would provide access to more markets." },
+              { title: "Inter-Chain Swaps", desc: "Cross-chain swaps made available, ideally via Chainlink's CCIP." },
+              { title: "Configurable Parameters", desc: "Slippage Target and Binary Iterations may become user-configurable." }
+            ]
+          }
+        ]
+      }
+    },
+    background: bg2
+  }
+];
+
 export const slides: Slide[] = [
   {
     id: 1,
@@ -181,53 +232,6 @@ export const slides: Slide[] = [
       }
     },
     background: bg3
-  },
-  {
-    id: 15,
-    title: "Roadmap & Financials",
-    subtitle: "Q1–Q3 2026 timeline, Ecosystem status, Team, The Ask, and 12‑month financial forecast",
-    badge: "ROADMAP & FINANCIALS",
-    content: {
-      type: "roadmap",
-      data: {
-        current: [
-          { title: "Configure Curve DEX", desc: "Limited implementation exists; full Curve integration in focus." },
-          { title: "Configure Fluid DEX", desc: "Fluid DEX integration as current focus for next version." },
-          { title: "Metrics Dashboard", desc: "Front end task to plug into middleware/smart contract feeds for comprehensive analytics." },
-          { title: "Implement Deterministic Trades", desc: "Deterministic trade execution and stream composition." },
-          { title: "Audit and code review", desc: "Security audit and full code review." }
-        ],
-        timeline: [
-          {
-            quarter: "Q1 2026",
-            version: "v1.0.6",
-            items: [
-              { title: "Configure Curve DEX", desc: "Full Curve DEX integration and configuration." },
-              { title: "Configure Fluid DEX", desc: "Fluid DEX integration and configuration." },
-              { title: "Metrics Dashboard", desc: "Front end task to plug into middleware/smart contract feeds for comprehensive analytics." }
-            ]
-          },
-          {
-            quarter: "Q2 2026",
-            version: "v1.0.7",
-            items: [
-              { title: "Implement Deterministic Trades", desc: "Deterministic trade execution and stream composition." },
-              { title: "Audit and code review", desc: "Security audit and full code review." }
-            ]
-          },
-          {
-            quarter: "Q3 2026",
-            version: "v1.0.8 → v2.0.0",
-            items: [
-              { title: "Intrachain Deployments", desc: "Deployments on Base and Avalanche would provide access to more markets." },
-              { title: "Inter-Chain Swaps", desc: "Cross-chain swaps made available, ideally via Chainlink's CCIP." },
-              { title: "Configurable Parameters", desc: "Slippage Target and Binary Iterations may become user-configurable." }
-            ]
-          }
-        ]
-      }
-    },
-    background: bg2
   },
   {
     id: 19,

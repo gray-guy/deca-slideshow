@@ -6,6 +6,7 @@ interface AskSlideProps {
       category: string;
       amount: string;
       description?: string;
+      bullets?: string[];
     }>;
     total?: string;
   };
@@ -28,12 +29,19 @@ export const AskSlide = ({ data }: AskSlideProps) => {
             transition={{ duration: 0.4, delay: index * 0.1 }}
             className="card-glass border-primary/30 flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-6 px-6"
           >
-            <div>
+            <div className="min-w-0 flex-1">
               <h3 className="text-lg font-display font-semibold text-foreground">
                 {item.category}
               </h3>
               {item.description && (
                 <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
+              )}
+              {item.bullets && item.bullets.length > 0 && (
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc pl-4">
+                  {item.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
               )}
             </div>
             <span className="text-2xl md:text-3xl font-display font-bold text-primary shrink-0">

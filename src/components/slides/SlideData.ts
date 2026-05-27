@@ -242,12 +242,46 @@ export const slides: Slide[] = [
       type: "ask",
       data: {
         lineItems: [
-          { category: "Team", amount: "$120k", description: "Team allocation" },
-          { category: "Maintenance", amount: "$30k", description: "Infrastructure & operations" },
-          { category: "Audit", amount: "$100k", description: "Security audit" },
-          { category: "Marketing & Business Development", amount: "$100k", description: "Growth & partnerships" }
+          {
+            category: "Team",
+            amount: "$40k",
+            description: "Lean product squad through Q3 2026",
+            bullets: [
+              "One full-time lead owning roadmap, protocol delivery, and release cadence",
+              "Two part-time developers shipping UI, integrations, and core product milestones"
+            ]
+          },
+          {
+            category: "Maintenance",
+            amount: "$5k",
+            description: "Essential infrastructure and data services",
+            bullets: [
+              "CoinGecko market data",
+              "Infura RPC and node access",
+              "AWS hosting, monitoring, and environment upkeep"
+            ]
+          },
+          {
+            category: "Audit",
+            amount: "$20k",
+            description: "Two public security reviews before broader distribution",
+            bullets: [
+              "Code4rena competitive audit",
+              "Immunefi public audit program"
+            ]
+          },
+          {
+            category: "Marketing & Business Development",
+            amount: "$24k",
+            description: "$8k per month for three months — paid growth, campaigns, and Ethereum ecosystem presence",
+            bullets: [
+              "ETHConf — Jun 8–10, 2026 · New York City",
+              "DappCon Berlin — Jun 16–17, 2026 · Berlin",
+              "Blockchain Futurist / ETHToronto — Jul 21–22, 2026 · Toronto"
+            ]
+          }
         ],
-        total: "$350k"
+        total: "$89k"
       }
     },
     background: bg1

@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "redeploy": "git add -A && (git diff --cached --quiet && echo \"No changes to redeploy.\" || (git commit -m \"redeploy: $(date '+%Y-%m-%d %H:%M:%S')\" && git push origin main))"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

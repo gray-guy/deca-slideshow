@@ -107,9 +107,10 @@
 
 @layer components {
   .slide-container {
-    /* The slideshow stage controls sizing (scales a fixed 16:9 canvas). */
-    @apply relative w-full h-full overflow-hidden;
+    @apply relative w-full h-full overflow-x-hidden overflow-y-auto;
     background: hsl(var(--background));
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
   }
 
   .slide-bg {
@@ -125,7 +126,7 @@
   }
 
   .slide-content {
-    @apply relative z-10 flex flex-col h-full p-8 md:p-16;
+    @apply relative z-10 flex flex-col min-h-full p-4 md:p-16;
   }
 
   .badge-primary {

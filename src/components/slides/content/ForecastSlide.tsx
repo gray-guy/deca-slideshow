@@ -47,8 +47,9 @@ const DEFAULT_Y_MAX = 1200;
 
 export const ForecastSlide = ({ data }: ForecastSlideProps) => {
   const yMax = data.yAxisMax ?? DEFAULT_Y_MAX;
+
   return (
-    <div className="space-y-4 h-full pb-16 flex flex-col">
+    <div className="space-y-4 pb-16">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -67,9 +68,9 @@ export const ForecastSlide = ({ data }: ForecastSlideProps) => {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className="flex-1 min-h-[280px]"
+        className="w-full"
       >
-        <ChartContainer config={chartConfig} className="h-full w-full aspect-auto min-h-[260px]">
+        <ChartContainer config={chartConfig} className="h-[280px] w-full aspect-auto md:h-[320px]">
           <ComposedChart
             data={data.dataPoints}
             margin={{ top: 12, right: 24, left: 12, bottom: 8 }}

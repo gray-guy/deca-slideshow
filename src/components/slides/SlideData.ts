@@ -28,7 +28,6 @@ export const deprecatedSlides: Slide[] = [
       type: "roadmap",
       data: {
         current: [
-          { title: "Configure Curve DEX", desc: "Limited implementation exists; full Curve integration in focus." },
           { title: "Configure Fluid DEX", desc: "Fluid DEX integration as current focus for next version." },
           { title: "Metrics Dashboard", desc: "Front end task to plug into middleware/smart contract feeds for comprehensive analytics." },
           { title: "Implement Deterministic Trades", desc: "Deterministic trade execution and stream composition." },
@@ -39,7 +38,6 @@ export const deprecatedSlides: Slide[] = [
             quarter: "Q1 2026",
             version: "v1.0.6",
             items: [
-              { title: "Configure Curve DEX", desc: "Full Curve DEX integration and configuration." },
               { title: "Configure Fluid DEX", desc: "Fluid DEX integration and configuration." },
               { title: "Metrics Dashboard", desc: "Front end task to plug into middleware/smart contract feeds for comprehensive analytics." }
             ]
@@ -133,10 +131,9 @@ export const slides: Slide[] = [
         dexes: [
           { name: "UniswapV2", detail: "All Fee Tiers" },
           { name: "UniswapV3", detail: "All Fee Tiers" },
-          { name: "Sushiswap", detail: "Multi-Chain" },
-          { name: "BalancerV2", detail: "Weighted Pools" }
+          { name: "Sushiswap", detail: "Multi-Chain" }
         ],
-        explanation: "DECAStream supports 8 of the most popular DEXs in the Ethereum ecosystem, providing comprehensive coverage for optimal trade execution.",
+        explanation: "DECAStream v1 integrates Uniswap V2/V3 and SushiSwap on Ethereum mainnet for core trade execution and routing coverage.",
         executionLogic: [
           { title: "Reserve Analysis", desc: "Smart contracts call system DEXs and read their reserves of tokenIn." },
           { title: "DEX Selection", desc: "DEX with the highest reserve is elected as most suitable for execution." },
@@ -277,7 +274,8 @@ export const slides: Slide[] = [
             bullets: [
               "ETHConf — Jun 8–10, 2026 · New York City",
               "DappCon Berlin — Jun 16–17, 2026 · Berlin",
-              "Blockchain Futurist / ETHToronto — Jul 21–22, 2026 · Toronto"
+              "Blockchain Futurist / ETHToronto — Jul 21–22, 2026 · Toronto",
+              "Liquidity Budget: maintain self-pushed $3k daily volume to maintain $1m+ yearly volume"
             ]
           }
         ],

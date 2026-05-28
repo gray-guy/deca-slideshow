@@ -19,6 +19,7 @@ import { EcosystemSlide } from "./content/EcosystemSlide";
 import { TeamSlide } from "./content/TeamSlide";
 import { AskSlide } from "./content/AskSlide";
 import { ForecastSlide } from "./content/ForecastSlide";
+import { ArchitectureFlowSlide } from "./content/ArchitectureFlowSlide";
 import { CompetitorsSlide } from "./content/CompetitorsSlide";
 import { ClosingSlide } from "./content/ClosingSlide";
 
@@ -67,6 +68,8 @@ export const SlideRenderer = ({ slide }: SlideRendererProps) => {
         return <AskSlide data={slide.content.data} />;
       case "forecast":
         return <ForecastSlide data={slide.content.data} />;
+      case "architecture":
+        return <ArchitectureFlowSlide data={slide.content.data} />;
       case "competitors":
         return <CompetitorsSlide data={slide.content.data} />;
       case "closing":

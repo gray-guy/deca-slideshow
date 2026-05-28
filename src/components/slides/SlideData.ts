@@ -13,7 +13,7 @@ export interface Slide {
 }
 
 export interface SlideContent {
-  type: "hero" | "overview" | "protocol" | "users" | "features" | "streaming" | "dex" | "algorithm" | "hotpairs" | "hotpairs-algo" | "instasettle" | "maintenance" | "fees" | "subgraph" | "roadmap" | "ecosystem" | "team" | "ask" | "forecast" | "competitors" | "closing";
+  type: "hero" | "overview" | "protocol" | "users" | "features" | "streaming" | "dex" | "algorithm" | "hotpairs" | "hotpairs-algo" | "instasettle" | "maintenance" | "fees" | "subgraph" | "roadmap" | "ecosystem" | "team" | "ask" | "forecast" | "architecture" | "competitors" | "closing";
   data?: any;
 }
 
@@ -319,6 +319,24 @@ export const slides: Slide[] = [
           "**Profit curve: 0.25%** of Ethereum DEX volume (same fee structure: 20 BPS in Q3, 40 BPS from Q4); cumulative ~$2.25M by month 12.",
           "**Long term aim**: if we matched CoW Swap's 30d volume (~$4.66b), our 30d take at 40 BPS would be ~$18.6M.",
           "**Assumption**: this model assumes **zero** liquidity throughput before Q3, however product is live already"
+        ]
+      }
+    },
+    background: bg2
+  },
+  {
+    id: 22,
+    title: "Architecture Flow",
+    badge: "SYSTEM OVERVIEW",
+    content: {
+      type: "architecture",
+      data: {
+        diagramSrc: "/architecture/deca-stream-architecture.png",
+        diagramAlt: "DECAStream architecture flow diagram",
+        notes: [
+          "**🦈 DECA STREAM**: Our hybridised routing protocol, algorithmically streaming trades out to ecosystem DEXs",
+          "**🏛️ KEEPER**: The protocol owned system maintainer, which senses trades and probes the `executeTrades` function in Core, executing the trade stream functionality",
+          "**🤖 LIQUIDITY BOT**: An open source liquidity bot. We have this running on an instance in the cloud. It's purpose is to identify arbitrage opportunities and ensure protocol volume is continuously flowing, providing for TVL, continuous monitoring and route testing, whilst keeping our Dashboard live with ongoing trade datas"
         ]
       }
     },
